@@ -1,0 +1,201 @@
+void main(){
+  
+  var student1 = new Student();
+  student1.id = 172010;
+  student1.name = 'Kanishkar';
+  print('${student1.id} and ${student1.name}');
+  student1.study();
+    student1.sleep();
+  
+    var student2 = new Student();
+  student2.id = 122012;
+  student2.name = 'Lakshana';
+  print('${student2.id} and ${student2.name}');
+  student2.study();
+    student2.sleep();
+  
+  //Defualt constructer
+  
+      var student3 = new Student2();
+  student3.id = 122012;
+  student3.name = 'Lakshana';
+  print('${student3.id} and ${student3.name}');
+  student3.study();
+    student3.sleep();
+  
+      var student4 = new Student2();
+  student4.id = 122012;
+  student4.name = 'Lakshana';
+  print('${student4.id} and ${student4.name}');
+  student4.study();
+    student4.sleep();
+  
+        var student5 = new Student3(23, 'Peter');
+  print('${student5.id} and ${student5.name}');
+  student5.study();
+    student5.sleep();
+  
+          var student6 = new Student4.namedContructer('Peter', 23);
+  print('${student6.name} and ${student6.id}');
+  student6.study();
+    student6.sleep();
+  
+  //list 
+//Fixed-length list
+  
+  List<int> numbersList = List.filled(5, 0);
+  numbersList[0] = 99;
+  numbersList[1] = 100;
+  numbersList[2] = 100;
+    numbersList[3] = 100;
+      numbersList[4] = 100;
+  
+  
+  //One method of printing Fixed-length list
+  for(var element in numbersList){
+    print(element);
+  }
+  
+  //Second method of printing Fixed-length list using Lambda
+  
+  numbersList.forEach((element) => print(element));
+  
+  //Third method of printing Fixed-length list using for loop
+  for(var i = 0 ; i < numbersList.length; i++){
+    print(numbersList[i]);
+  }
+  
+  //Sets
+  
+  Set<String> countries = Set.from(['USA', 'China', 'India']);
+  countries.add('Australia');
+    countries.remove('China');
+    
+    for(var each in countries){
+      print(each);
+    }
+  
+  print(countries.contains('India'));
+    print(countries.contains('Laos'));
+  print(countries.length);
+  print(countries.isEmpty);
+  
+  //Map
+  
+  Map<int, String> languages = Map();
+  languages[1] = 'Python';
+  languages[2] = 'Dart';
+  languages[3] = 'HTML';
+    
+  print(languages[2]);
+  
+  //To display all values of Map
+  
+  for(var values in languages.values){
+    print(values);
+  }
+  
+    //To display all keys of Map
+    for(var key in languages.keys){
+    print(key);
+  }
+  
+  //TO display kays and values together
+  languages.forEach((key, value)=> print('key: $key and value: $value'));
+  print(languages.containsKey(2));
+languages.update(3, (value) => 'CSS');
+   for(var values in languages.values){
+    print(values);
+  }
+  
+  languages.remove(3);  languages.forEach((key, value)=> print('key: $key and value: $value'));
+  
+  var personOne = Person();
+  personOne('Kanishkar', 11);
+}
+
+
+//Define states and behaviors of student using class and objects
+class Student{
+  late int id;
+  late String name;
+  
+  void study(){
+    print('${this.name} is now studying');
+  }
+  
+  void sleep(){
+        print('${this.name} is now sleeping');
+  }
+  
+}
+
+//Working with constructers
+//1. Default Constructure
+class Student2{
+  late int id;
+  late String name;
+  
+  Student2(){
+    print('This is the student');
+  }
+  void study(){
+    print('${this.name} is now studying');
+  }
+  
+  void sleep(){
+        print('${this.name} is now sleeping');
+  }
+  
+  
+
+  }
+
+    //Parameterized Constructer
+  class Student3{
+  late int id;
+  late String name;
+  
+  Student3(this.id, this.name);
+    
+  void study(){
+    print('${this.name} is now studying');
+  }
+  
+  void sleep(){
+        print('${this.name} is now sleeping');
+  }
+  }
+
+//Names Contructer
+  class Student4{
+  late int id;
+  late String name;
+  
+  Student4.namedContructer(this.name, this.id);
+    
+  void study(){
+    print('${this.name} is now studying');
+  }
+  
+  void sleep(){
+        print('${this.name} is now sleeping');
+  }
+  }
+
+//Callable class
+
+class Person{
+  void call(String name, int age){
+    print('The name of the person is $name and the age of the person is $age');
+  }
+}
+
+
+
+
+
+
+
+//Callable class helps us to make a class as a fucntion.
+
